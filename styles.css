@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {  
+    --txt-white: hsl(0, 0%, 100%);
+
+    /*THEME 1*/
+    --th1-main-bg: hsl(224, 36%, 15%);
+    --th1-toggle-bg: hsl(223, 31%, 20%);
+    --th1-screen-bg: hsl(222, 26%, 31%);
+    --th1-key-bg: hsl(30, 25%, 89%);
+    --th1-key-shadow: hsl(28, 16%, 65%);
+    --th1-red: hsl(6, 63%, 50%);
+    --th1-red-key-shadow: hsl(6, 70%, 34%);
+    --th1-function-key-bg: hsl(225, 21%, 49%);
+    --th1-function-key-shadow: hsl(224, 28%, 35%);
+    --th1-txt-dark-gray-blue: hsl(221, 14%, 31%);
+    
+    /*THEME 2*/
+    --th2-main-bg: hsl(0, 0%, 93%);
+    --th2-toggle-bg: hsl(0, 5%, 81%);
+    --th2-screen-bg: hsl(0, 0%, 90%);
+    --th2-key-bg: hsl(45, 7%, 89%);
+    --th2-key-shadow: hsl(35, 11%, 61%);
+    --th2-orange: hsl(25, 98%, 40%);
+    --th2-orange-key-shadow: hsl(25, 99%, 27%);
+    --th2-function-key-bg: hsl(185, 42%, 37%);
+    --th2-function-key-shadow: hsl(185, 58%, 25%);
+    --th2-txt-dark-gray-yellow: hsl(60, 10%, 19%);
+
+    /*THEME 3*/
+    --th3-screen-bg: hsl(268, 75%, 9%);
+    --th3-toggle-main-bg: hsl(268, 71%, 12%);
+    --th3-key-bg: hsl(268, 47%, 21%);
+    --th3-key-shadow: hsl(290, 70%, 36%);
+    --th3-cyan: hsl(176, 100%, 44%);
+    --th3-cyan-key-shadow: hsl(177, 92%, 70%);
+    --th3-function-key-bg: hsl(281, 89%, 26%);
+    --th3-function-key-shadow: hsl(285, 91%, 52%);
+    --th3-txt-yellow: hsl(52, 100%, 62%);
+    --th3-txt-dark-blue: hsl(198, 20%, 13%);
+
+    /*TYPOGRAPHY*/
+    --fs-small: 0.8rem;
+    --fs-normal: 1.5rem;
+    --fs-larger: 2rem;
+    --fs-largest: 2.5rem;
+    --fw-normal: 700;
+
+    /*BORDER RADIUS AND SPACING*/
+    --br-small: 8px;
+    --br-normal: 20px;
+    --spc-smallest: 6px;
+    --spc-small: 8px;
+    --spc-normal: 16px;
+    --spc-large: 24px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--fs-larger);
+    font-weight: var(--fw-normal);
+    font-family: 'League Spartan', sans-serif;
+
+    height: 100vh;
+}
+
+main {
+    margin-bottom: var(--spc-small);
+}
+
+/*          HEADER          */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-left: var(--spc-small);
+}
+
+h1 {
+    font-size: var(--fs-normal);
+}
+
+p {
+    font-size: var(--fs-small);
+}
+
+.theme-selection-wrapper {
+    display: flex;
+    align-items: flex-end;
+    font-size: var(--fs-small);
+}
+
+.theme-selection-wrapper > p {
+    margin-right: var(--spc-large);
+    margin-bottom: var(--spc-smallest);
+}
+
+.theme-selection {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80px;
+    text-align: center;
+}
+
+.theme-selection-numbers-wrapper {
+    grid-column-end: span 3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: var(--spc-smallest);
+}
+
+.theme-selection-numbers-wrapper > p {
+    width: 16px;
+}
+
+.theme-selection-radio-wrapper {
+    grid-column-end: span 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spc-smallest);
+    border-radius: var(--br-normal);
+}
+
+input {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.2s border linear;
+    cursor: pointer;
+}
+/*-----------------------------------*/
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: var(--fs-largest);
+    height: 100px;
+    padding: var(--spc-large);
+    margin: var(--spc-large) 0;
+    border-radius: var(--br-small);
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--spc-large);
+
+    padding: var(--spc-large);
+    border-radius: var(--br-small);
+}
+
+button {
+    font-size: inherit;
+    font-weight: inherit;
+    padding:  var(--spc-small) var(--spc-large);
+    border: none;
+    border-radius: var(--br-small);
+    cursor: pointer;
+}
+
+button:hover,
+input:hover {
+    opacity: 0.7; /*temporary because the hover colors are not provided*/
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.function-btn {
+    font-size: var(--fs-normal);
+}
+
+.function-btn:nth-last-of-type(2) {
+    grid-column-end: span 2;
+}
+
+.equal-btn {
+    font-size: var(--fs-normal);
+    grid-column-end: span 2;
+}
+
+/*          COLORS          */
+.theme1 {
+    background-color: var(--th1-screen-bg);
+    color: var(--txt-white);
+}
+
+.theme1 .display {
+    background-color: var(--th1-main-bg);
+}
+
+.theme1 .keypad, 
+.theme1 .theme-selection-radio-wrapper {
+    background-color: var(--th1-toggle-bg);
+}
+
+.theme1 .input-btn {
+    background-color: var(--th1-key-bg);
+    box-shadow: 0 4px 0 0 var(--th1-key-shadow);
+    color: var(--th1-txt-dark-gray-blue);
+}
+
+.theme1 .equal-btn {
+    background-color: var(--th1-red);
+    box-shadow: 0 4px 0 0 var(--th1-red-key-shadow);
+    color: inherit;
+}
+
+.theme1 .function-btn {
+    background-color: var(--th1-function-key-bg);
+    box-shadow: 0 4px 0 0 var(--th1-function-key-shadow);
+    color: inherit;
+}
+
+.theme1 input:checked {
+    border: 8px solid var(--th1-red);
+}
+
+.theme2 {
+    background-color: var(--th2-screen-bg);
+    color: var(--th2-txt-dark-gray-blue);
+}
+
+.theme2 .display {
+    background-color: var(--th2-main-bg);
+}
+
+.theme2 .keypad, 
+.theme2 .theme-selection-radio-wrapper {
+    background-color: var(--th2-toggle-bg);
+}
+
+.theme2 .input-btn {
+    background-color: var(--th2-key-bg);
+    box-shadow: 0 4px 0 0 var(--th2-key-shadow);
+    color: inherit;
+}
+
+.theme2 .equal-btn {
+    background-color: var(--th2-orange);
+    box-shadow: 0 4px 0 0 var(--th2-orange-key-shadow);
+    color: var(--txt-white);
+}
+
+.theme2 .function-btn {
+    background-color: var(--th2-function-key-bg);
+    box-shadow: 0 4px 0 0 var(--th2-function-key-shadow);
+    color: var(--txt-white);
+}
+
+.theme2 input:checked {
+    border: 8px solid var(--th2-orange);
+}
+
+.theme3 {
+    background-color: var(--th3-screen-bg);
+    color: var(--th3-txt-yellow);
+}
+
+.theme3 .display {
+    background-color: var(--th3-toggle-main-bg);
+}
+
+.theme3 .keypad, 
+.theme3 .theme-selection-radio-wrapper {
+    background-color: var(--th3-toggle-main-bg);
+}
+
+.theme3 .input-btn {
+    background-color: var(--th3-key-bg);
+    box-shadow: 0 4px 0 0 var(--th3-key-shadow);
+    color: inherit;
+}
+
+.theme3 .equal-btn {
+    background-color: var(--th3-cyan);
+    box-shadow: 0 4px 0 0 var(--th3-cyan-key-shadow);
+    color: var(--th3-txt-dark-blue);
+}
+
+.theme3 .function-btn {
+    background-color: var(--th3-function-key-bg);
+    box-shadow: 0 4px 0 0 var(--th3-function-key-shadow);
+    color: var(--txt-white);
+}
+
+.theme3 input:checked {
+    border: 8px solid var(--th3-cyan);
+}
+
+
+/*
+Mobile: 375px
+Desktop: 1440px
+*/

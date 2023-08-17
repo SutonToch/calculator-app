@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
   
   <title>Frontend Mentor | Calculator app</title>
 
@@ -14,13 +15,51 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
-
-
-  
-  <div class="attribution">
+<body class="theme1">
+  <main>
+    <header>
+      <h1>calc</h1>
+      <div class="theme-selection-wrapper">
+        <p>THEME</p>
+        <div class="theme-selection">
+          <div class="theme-selection-numbers-wrapper">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+          </div>
+          <div class="theme-selection-radio-wrapper">
+            <input type="radio" id="rd-theme1" name="theme" checked>
+            <input type="radio" id="rd-theme2" name="theme">
+            <input type="radio" id="rd-theme3" name="theme">
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="display">display</section>
+    <section class="keypad">
+      <button type="button" class="input-btn">7</button>
+      <button type="button" class="input-btn">8</button>
+      <button type="button" class="input-btn">9</button>
+      <button type="button" class="function-btn">DEL</button>
+      <button type="button" class="input-btn">4</button>
+      <button type="button" class="input-btn">5</button>
+      <button type="button" class="input-btn">6</button>
+      <button type="button" class="input-btn">+</button>
+      <button type="button" class="input-btn">1</button>
+      <button type="button" class="input-btn">2</button>
+      <button type="button" class="input-btn">3</button>
+      <button type="button" class="input-btn">-</button>
+      <button type="button" class="input-btn">.</button>
+      <button type="button" class="input-btn">0</button>
+      <button type="button" class="input-btn">/</button>
+      <button type="button" class="input-btn">x</button>
+      <button type="button" class="function-btn">RESET</button>
+      <button type="button" class="equal-btn">=</button>
+    </section>
+  </main>
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="https://www.frontendmentor.io/profile/SutonToch" target="_blank">Paul Pfütze</a>.
+  </footer>
 </body>
 </html>
