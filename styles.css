@@ -75,6 +75,8 @@ body {
 
 main {
     margin-bottom: var(--spc-small);
+    max-width: 70vw;
+    overflow: auto;
 }
 
 /*          HEADER          */
@@ -152,7 +154,6 @@ input {
     padding: var(--spc-large);
     margin: var(--spc-large) 0;
     border-radius: var(--br-small);
-    max-width: 50vw;
     word-break: break-all;
 }
 
@@ -305,8 +306,16 @@ button:active {
     border: 8px solid var(--th3-cyan);
 }
 
+@media (max-width: 600px) {
+    main {
+        max-width: 90vw;
+    }
 
-/*
-Mobile: 375px
-Desktop: 1440px
-*/
+    .keypad {
+        grid-gap: var(--spc-normal);
+    }
+
+    button {
+        padding: var(--spc-small);
+    }
+}
