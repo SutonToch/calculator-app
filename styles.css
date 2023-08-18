@@ -141,8 +141,8 @@ input {
     transition: 0.2s border linear;
     cursor: pointer;
 }
-/*-----------------------------------*/
 
+/*          DISPLAY AND KEYPAD          */
 .display {
     display: flex;
     justify-content: flex-end;
@@ -174,7 +174,7 @@ button {
 
 button:hover,
 input:hover {
-    opacity: 0.7; /*temporary because the hover colors are not provided*/
+    opacity: 0.7; /*temporary because some hover colors are not provided without *PRO**/
 }
 
 button:active {
