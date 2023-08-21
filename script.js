@@ -41,23 +41,16 @@ resetButton.click(() => {
 });
 
 equalButton.click(() => {
-    if(firstInput) {
-        return;
-    }
     evaluateDisplay();
 });
 
-// KEYPAD WITH KEYBOARD
+// KEYPAD-INPUT USING KEYBOARD
 $(document).on("keydown", function(e) {
-    e.preventDefault();
     if(e.keyCode == 13 || (e.shiftKey && e.keyCode == 48)) {
-        if(firstInput) {
-            return;
-        }
         evaluateDisplay();
     } else if(e.keyCode == 32) {
         //reset on double spacebar
-        const delta = 500;
+        const delta = 200;
         let thisKeypressTime = new Date();
         
         if(thisKeypressTime - lastKeypressTime <= delta) {
@@ -68,6 +61,7 @@ $(document).on("keydown", function(e) {
     } else if(e.keyCode == 46 || e.keyCode == 8) {
         deleteLastCharFromDisplay()
     } else if(e.keyCode == 111 || (e.shiftKey && e.keyCode == 55)) {
+        e.preventDefault();
         addToDisplay("/");
     } else if(e.keyCode == 88 || e.keyCode == 106 || (e.shiftKey && e.keyCode == 171)) {
         addToDisplay("x");
@@ -137,6 +131,26 @@ function checkForIncorrectInput(input) {
             return true;
         }
     }
+
+    //no multiple . within a single number
+    if(input == ".") {
+        let checking = true;
+        let checkIndex = -1;
+        let checkChar = "";
+        while(checking) {
+            checkChar = display.textContent.slice(checkIndex-1, checkIndex);
+            if(checkChar == ".") {
+                return true;
+            }
+            if(checkChar == "+" || checkChar == "-" || checkChar == "/" || checkChar == "x") {
+                checking = false;
+            }
+            if(Math.abs(checkIndex) > display.textContent.length) {
+                checking = false;
+            }
+            checkIndex -= 1;
+        }
+    }
 }
 
 function deleteLastCharFromDisplay() {
@@ -154,8 +168,10 @@ function resetDisplay() {
 }
 
 function evaluateDisplay() {
-    sanitizeDisplay()
-    display.textContent = display.textContent.replaceAll("x", "*");
+    if(firstInput) {
+        return;
+    }
+    sanitizeDisplay();
     display.textContent = eval(display.textContent); //temporary due to security risk of eval()
 }
 
