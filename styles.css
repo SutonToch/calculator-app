@@ -176,7 +176,9 @@ button {
 }
 
 button:hover,
-input:hover {
+input:hover,
+button:focus,
+input:focus {
     opacity: 0.7; /*temporary because some hover colors are not provided without *PRO**/
 }
 
@@ -197,7 +199,8 @@ button:active {
     grid-column-end: span 2;
 }
 
-/*          COLORS          */
+/*            COLORS            */
+/* Nesting would have been nice */
 .theme1 {
     background-color: var(--th1-screen-bg);
     color: var(--txt-white);
