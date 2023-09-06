@@ -29,8 +29,8 @@ equalButton.click(() => {
 $(document).on("keydown", function(e) {
     if(e.keyCode == 13 || (e.shiftKey && e.keyCode == 48)) {
         evaluateDisplay();
-    } else if(e.keyCode == 32) {
-        //reset on double spacebar
+    } else if(e.keyCode == 17) {
+        //reset on double Ctrl
         const delta = 200;
         let thisKeypressTime = new Date();
         
