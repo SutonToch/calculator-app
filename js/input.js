@@ -1,9 +1,4 @@
 import { calcSolution } from "./eval.js";
-
-const body = $("body");
-const radio1 = $("#rd-theme1");
-const radio2 = $("#rd-theme2");
-const radio3 = $("#rd-theme3");
 const display = $(".display")[0];
 const inputButtons = $(".input-btn");
 const delButton = $("#del-btn");
@@ -11,22 +6,6 @@ const resetButton = $("#reset-btn");
 const equalButton = $(".equal-btn");
 let firstInput = true;
 let lastKeypressTime = 0;
-
-// THEME-BUTTON EVENT LISTENER
-radio1.click(() => {
-    $(body).removeClass();
-    $(body).addClass("theme1");
-})
-
-radio2.click(() => {
-    $(body).removeClass();
-    $(body).addClass("theme2");
-})
-
-radio3.click(() => {
-    $(body).removeClass();
-    $(body).addClass("theme3");
-})
 
 
 // KEYPAD EVENT LISTENER
