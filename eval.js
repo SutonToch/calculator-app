@@ -1,5 +1,4 @@
 export function calcSolution(expr) {
-    console.log("Eval: " + eval(expr))
     expr = findSubexprToCalc(expr, ["*", "/"])
     expr = findSubexprToCalc(expr, ["+", "-"])
     return expr

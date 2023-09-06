@@ -114,7 +114,7 @@ function addToDisplay(input) {
 function checkForIncorrectInput(input) {
     //no arithmetic characters or 0 as first input
     if(firstInput) {
-        if(input == "+" || input == "/" || input == "x" || input == "." || input == "0") {
+        if(input == "+" || input == "/" || input == "x" || input == ".") {
             return true;
         }
     }
