@@ -213,6 +213,9 @@ function findSubexprToCalc(expr, ops) {
             searchingForEndIndex = true
             currentOp = expr[exprIndex]
             exprIndex += 1
+            if(expr[exprIndex] == "-") {
+                exprIndex += 1
+            }
             continue
         }
 
