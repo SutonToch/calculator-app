@@ -174,3 +174,7 @@ button:active {
         padding: var(--spc-small);
     }
 }
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}

@@ -75,6 +75,10 @@
     border: 8px solid var(--th1-red);
 }
 
+.theme1 a {
+    color: var(--th1-red)
+}
+
 .theme2 {
     background-color: var(--th2-screen-bg);
     color: var(--th2-txt-dark-gray-blue);
@@ -111,6 +115,10 @@
     border: 8px solid var(--th2-orange);
 }
 
+.theme2 a {
+    color: var(--th2-orange)
+}
+
 .theme3 {
     background-color: var(--th3-screen-bg);
     color: var(--th3-txt-yellow);
@@ -145,4 +153,8 @@
 
 .theme3 input:checked {
     border: 8px solid var(--th3-cyan);
+}
+
+.theme3 a {
+    color: var(--th3-cyan);
 }
