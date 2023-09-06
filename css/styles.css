@@ -84,7 +84,7 @@ p {
     padding: var(--spc-smallest);
 }
 
-.theme-selection-numbers-wrapper > p {
+.theme-selection-numbers-wrapper > label {
     width: 16px;
 }
 
