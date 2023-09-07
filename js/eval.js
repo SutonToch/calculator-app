@@ -22,7 +22,7 @@ function findSubexprToCalc(expr, ops) {
             startIndex = exprIndex+1
         }
 
-        if(!searchingForEndIndex && (expr[exprIndex] == ops[0] || expr[exprIndex] == ops[1])) {
+        if(!searchingForEndIndex && (expr[exprIndex] == ops[0] || expr[exprIndex] == ops[1]) && exprIndex > 0) {
             searchingForEndIndex = true
             currentOp = expr[exprIndex]
             exprIndex += 1
